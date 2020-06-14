@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "674113676194",
+    "firebase_url": "https://buddies-gram-92c09.firebaseio.com",
+    "project_id": "buddies-gram-92c09",
+    "storage_bucket": "buddies-gram-92c09.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:674113676194:android:de7058d61af12ae51e88fb",
+        "android_client_info": {
+          "package_name": "com.example.buddiesgram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "674113676194-2jpdujh5k85qlodvv7pjthmgdd6i1t18.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.buddiesgram",
+            "certificate_hash": "ad4bd3fd1e2dbab8d6984a1aa04409cea960ae81"
+          }
+        },
+        {
+          "client_id": "674113676194-qmq2ppeg4ig2mbacajgge0hvfb41n861.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPfwoFdYL6Z0I0aVBNlt0LVP4oVtjPG6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "674113676194-qmq2ppeg4ig2mbacajgge0hvfb41n861.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
