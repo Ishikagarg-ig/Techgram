@@ -1,14 +1,17 @@
+import 'package:buddiesgram/pages/CreateAccountPage.dart';
 import 'package:buddiesgram/pages/NotificationPage.dart';
 import 'package:buddiesgram/pages/SearchPage.dart';
 import 'package:buddiesgram/pages/TimeLinePage.dart';
 import 'package:buddiesgram/pages/UploadPage.dart';
 import 'package:buddiesgram/pages/ProfilePage.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 
 final GoogleSignIn gSignIn = GoogleSignIn();
+final usersReference =Firestore.instance.collection("users");
 
 class HomePage extends StatefulWidget {
   @override
@@ -39,6 +42,7 @@ class _HomePageState extends State<HomePage> {
 
   controlSignIn(GoogleSignInAccount signInAccount) async{
     if(signInAccount!=null){
+      await saveUserInfoToFirebase();
       setState(() {
         isSignedIn=true;
       });
@@ -47,6 +51,15 @@ class _HomePageState extends State<HomePage> {
       setState(() {
         isSignedIn=false;
       });
+    }
+  }
+
+  saveUserInfoToFirebase() async{
+    final GoogleSignInAccount gCurrentUser = gSignIn.currentUser;
+    DocumentSnapshot documentSnapshot = await usersReference.document(gCurrentUser.id).get();
+
+    if(!documentSnapshot.exists){
+      final username = await Navigator.push(context, MaterialPageRoute(builder: (context) => CreateAccountPage()),);
     }
   }
 
