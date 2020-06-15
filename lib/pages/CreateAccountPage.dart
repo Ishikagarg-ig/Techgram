@@ -32,7 +32,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      appBar: header(context, strTitle: "Settings", disappearedBackButton: false),
+      appBar: header(context, strTitle: "Settings", disappearedBackButton: true),
       body: ListView(
         children: <Widget>[
           Padding(
@@ -96,12 +96,12 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               height: 55.0,
               width: 360.0,
               decoration: BoxDecoration(
-                color: Colors.lightGreenAccent,
+                color: Colors.green,
                 borderRadius: BorderRadius.circular(8.0),
               ),
               child: Center(
                 child: Text(
-                  "Submit",
+                  "Proceed",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16.0,
