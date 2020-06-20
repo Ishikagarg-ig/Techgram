@@ -6,6 +6,7 @@ import 'package:buddiesgram/pages/TimeLinePage.dart';
 import 'package:buddiesgram/pages/UploadPage.dart';
 import 'package:buddiesgram/pages/ProfilePage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -13,6 +14,10 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 final GoogleSignIn gSignIn = GoogleSignIn();
 final usersReference =Firestore.instance.collection("users");
+final storageReference = FirebaseStorage.instance.ref().child("Post Pictures");
+final postsReference =Firestore.instance.collection("posts");
+final activityFeedReference =Firestore.instance.collection("feed");
+
 final DateTime timestamp = DateTime.now();
 User currentUser;
 
@@ -67,7 +72,7 @@ class _HomePageState extends State<HomePage> {
       usersReference.document(gCurrentUser.id).setData({
         "id": gCurrentUser.id,
         "profileName": gCurrentUser.displayName,
-        "userName": username,
+        "username": username,
         "url": gCurrentUser.photoUrl,
         "email": gCurrentUser.email,
         "bio": "",
@@ -107,9 +112,9 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           TimeLinePage(),
           SearchPage(),
-          UploadPage(),
+          UploadPage(gCurrentUser: currentUser,),
           NotificationPage(),
-          ProfilePage(),
+          ProfilePage(userProfileId: currentUser.id),
         ],
         controller: pageController,
         onPageChanged: whenPageChanges,
@@ -130,6 +135,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+
   }
 
   Scaffold buildSignInScreen(){
