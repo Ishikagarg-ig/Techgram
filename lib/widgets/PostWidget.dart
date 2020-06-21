@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:buddiesgram/models/user.dart';
 import 'package:buddiesgram/pages/CommentsPage.dart';
 import 'package:buddiesgram/pages/HomePage.dart';
+import 'package:buddiesgram/pages/ProfilePage.dart';
 import 'package:buddiesgram/widgets/ProgressWidget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -117,7 +118,7 @@ class _PostWidgetState extends State<PostWidget> {
         return ListTile(
           leading: CircleAvatar(backgroundImage: CachedNetworkImageProvider(user.url),backgroundColor: Colors.grey,),
           title: GestureDetector(
-            onTap: ()=> print("show profile"),
+            onTap: ()=> displayUserProfile(context, userProfileId: user.id),
             child: Text(
               user.username,
               style: TextStyle(
@@ -134,6 +135,10 @@ class _PostWidgetState extends State<PostWidget> {
         );
       },
     );
+  }
+
+  displayUserProfile(BuildContext context, {String userProfileId}){
+    Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage(userProfileId: userProfileId,)));
   }
 
   removeLike(){
