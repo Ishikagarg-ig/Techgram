@@ -17,6 +17,9 @@ final usersReference =Firestore.instance.collection("users");
 final storageReference = FirebaseStorage.instance.ref().child("Post Pictures");
 final postsReference =Firestore.instance.collection("posts");
 final activityFeedReference =Firestore.instance.collection("feed");
+final commentsReference =Firestore.instance.collection("comments");
+final followersReference =Firestore.instance.collection("userFollower");
+final followingReference =Firestore.instance.collection("userFollowing");
 
 final DateTime timestamp = DateTime.now();
 User currentUser;
