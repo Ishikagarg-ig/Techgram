@@ -64,7 +64,7 @@ class _CommentsPageState extends State<CommentsPage> {
         "username": currentUser.username,
         "userProfileImg": currentUser.url,
         "url": postImageUrl,
-        "timestamp": DateTime.now(),
+        "timestamp": timestamp,
       });
     }
     commentTextEditingController.clear();

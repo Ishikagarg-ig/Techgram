@@ -35,14 +35,14 @@ class _NotificationsPageState extends State<NotificationsPage> {
   }
 
   retrieveNotifications() async{
-    QuerySnapshot querySnapshot = await activityFeedReference.document(currentUser.id).collection("feedItems").orderBy(timestamp,descending: true).limit(50).getDocuments();
+    QuerySnapshot querySnapshot = await activityFeedReference.document(currentUser.id).collection("feedItems").orderBy("timestamp",descending: true).limit(50).getDocuments();
 
     List<NotificationsItem> notificationsItem =[];
 
     querySnapshot.documents.forEach((document) {
       notificationsItem.add(NotificationsItem.fromDocument(document));
     });
-    return NotificationsItem;
+    return notificationsItem;
   }
 }
 

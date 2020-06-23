@@ -38,6 +38,7 @@ dependencies:
   firebase_auth:
   geolocator: ^5.3.2+2
   uuid: ^2.1.0
+  firebase: ^7.3.0
   path_provider: ^1.6.10
   firebase_messaging: ^6.0.16
   firebase_storage: ^3.1.6

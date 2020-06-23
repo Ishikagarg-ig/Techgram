@@ -188,7 +188,7 @@ class _ProfilePageState extends State<ProfilePage> {
       }
     });
 
-    followingReference.document(currentOnlineUserId).collection("userFollowers").document(widget.userProfileId).get().then((document){
+    followingReference.document(currentOnlineUserId).collection("userFollowing").document(widget.userProfileId).get().then((document){
       if(document.exists){
         document.reference.delete();
       }
