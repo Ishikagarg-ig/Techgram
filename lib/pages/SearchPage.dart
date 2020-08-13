@@ -18,7 +18,9 @@ class _SearchPageState extends State<SearchPage> with AutomaticKeepAliveClientMi
 
   controlSearching(String str){
       Future<QuerySnapshot> allUsers = usersReference.where("profileName",isGreaterThanOrEqualTo: str).getDocuments();
-      futureSearchResults = allUsers;
+      setState(() {
+        futureSearchResults = allUsers;
+    });
   }
 
   emptyTheTextFormField(){
