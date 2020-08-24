@@ -1,4 +1,4 @@
-# buddiesgram
+# techgram
 
 A new Flutter application.
 
