@@ -1,3 +1,4 @@
+import 'package:buddiesgram/main.dart';
 import 'package:buddiesgram/models/user.dart';
 import 'package:buddiesgram/pages/HomePage.dart';
 import 'package:buddiesgram/widgets/ProgressWidget.dart';
@@ -24,7 +25,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
 
   void initState(){
     super.initState();
-
     getAndDisplayUserInformation();
   }
 

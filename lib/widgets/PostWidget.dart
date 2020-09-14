@@ -203,7 +203,7 @@ class _PostWidgetState extends State<PostWidget> {
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          Image.network(url),
+          Image.network(url,height: 360,),
           showHeart ? Icon(Icons.favorite, size :140.0,color: Colors.pink,) : Text(""),
         ],
       ),

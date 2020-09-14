@@ -1,3 +1,5 @@
+import 'package:buddiesgram/models/data.dart';
+import 'package:buddiesgram/pages/StoryScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:buddiesgram/pages/HomePage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -9,11 +11,23 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'BuddiesGram',
+      title: 'TechGram',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.black,

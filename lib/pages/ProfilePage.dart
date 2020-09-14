@@ -225,8 +225,8 @@ class _ProfilePageState extends State<ProfilePage> {
       child: FlatButton(
           onPressed: performFunction,
           child: Container(
-            width: 245.0,
-            height: 26.0,
+            width: MediaQuery.of(context).size.width*0.6,
+            height: MediaQuery.of(context).size.height*0.037,
             child: Text(
               title,
               style: TextStyle(

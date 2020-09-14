@@ -43,6 +43,8 @@ dependencies:
   firebase_messaging: ^6.0.16
   firebase_storage: ^3.1.6
   flutter_svg: ^0.17.4
+  video_player: ^0.10.11+2
+  dashed_circle: ^0.0.1
 
 dev_dependencies:
   flutter_test:

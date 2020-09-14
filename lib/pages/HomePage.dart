@@ -1,9 +1,11 @@
 import 'dart:io';
 
+import 'package:buddiesgram/models/data.dart';
 import 'package:buddiesgram/models/user.dart';
 import 'package:buddiesgram/pages/CreateAccountPage.dart';
 import 'package:buddiesgram/pages/NotificationsPage.dart';
 import 'package:buddiesgram/pages/SearchPage.dart';
+import 'package:buddiesgram/pages/StoryScreen.dart';
 import 'package:buddiesgram/pages/TimeLinePage.dart';
 import 'package:buddiesgram/pages/UploadPage.dart';
 import 'package:buddiesgram/pages/ProfilePage.dart';
@@ -201,7 +203,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(
-              "Buddies Gram",
+              "Tech Gram",
               style: TextStyle(
                 fontSize: 92.0,
                 color: Colors.white,
